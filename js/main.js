@@ -1,210 +1,368 @@
-// // // // // console.log('\n==Деструктуризация массивов==')
-// // // // // const colors = ['red', 'green', 'blue']
-// // // // // const [first, second, third] = colors
-// // // // // console.log(first, second, third)
-// // // // // const [c1, c2, c3, c4 = 'yellow'] = colors
-// // // // // console.log(c1, c2, c3, c4)
-// // // // // console.log('\n==Деструктуризация объектов==')
-// // // // // const user = {
-// // // // // 	name: 'Алиса',
-// // // // // 	age: 30,
-// // // // // 	city: 'Москва',
+// // // // // // console.log('\n==Деструктуризация массивов==')
+// // // // // // const colors = ['red', 'green', 'blue']
+// // // // // // const [first, second, third] = colors
+// // // // // // console.log(first, second, third)
+// // // // // // const [c1, c2, c3, c4 = 'yellow'] = colors
+// // // // // // console.log(c1, c2, c3, c4)
+// // // // // // console.log('\n==Деструктуризация объектов==')
+// // // // // // const user = {
+// // // // // // 	name: 'Алиса',
+// // // // // // 	age: 30,
+// // // // // // 	city: 'Москва',
+// // // // // // }
+
+// // // // // // const { name, age, city } = user
+// // // // // // console.log(name, age, city)
+
+// // // // // // const { name: userName, age: userAge, country = 'Россия' } = user
+// // // // // // console.log(userName, country)
+
+// // // // // // console.log('\n==Деструктуризация в параметрах==')
+
+// // // // // // function printUser({ name, age, city }) {
+// // // // // // 	console.log(`Имя: ${name}, Возраст: ${age}, Город: ${city}`)
+// // // // // // }
+
+// // // // // // console.log()
+// // // // // // printUser(user)
+
+// // // // // // const product = {
+// // // // // // 	name: 'Телефон',
+// // // // // // 	price: 500,
+// // // // // // 	category: 'Электроника',
+// // // // // // 	inStock: true,
+// // // // // // }
+// // // // // // const { name: productName, price, category, inStock } = product
+// // // // // // console.log(
+// // // // // // 	`Название: ${productName}, Цена: ${price}, Категория: ${category}, В наличии: ${inStock}`,
+// // // // // // )
+
+// // // // // // function printProduct({ name, price, category, inStock }) {
+// // // // // // 	console.log(
+// // // // // // 		`Название: ${name}, Цена: ${price}, Категория: ${category}, В наличии: ${inStock}`,
+// // // // // // 	)
+// // // // // // }
+
+// // // // // // printProduct(product)
+
+// // // // // // console.log('\nSpread для массивов')
+// // // // // // const arr1 = [1, 2, 3]
+// // // // // // const arr2 = [4, 5, 6]
+// // // // // // const combined = [...arr1, ...arr2]
+// // // // // // console.log(`Combined: ${combined}`)
+// // // // // // const copy = [...arr1]
+// // // // // // console.log(`Copy: ${copy}`)
+// // // // // // const extended = [0, ...arr1, 7, 8]
+// // // // // // console.log(`Extended: ${extended}`)
+
+// // // // // // console.log('\nSpread для объектов')
+
+// // // // // // const person = {
+// // // // // // 	name: 'Иван',
+// // // // // // 	age: 25,
+// // // // // // }
+// // // // // // const adress = {
+// // // // // // 	city: 'Санкт-Петербург',
+// // // // // // 	street: 'Невский проспект',
+// // // // // // }
+// // // // // // const fullinfo = { ...person, ...adress }
+// // // // // // console.log(`Full Info:`, fullinfo)
+// // // // // // const personCopy = { ...person }
+// // // // // // console.log('Person Copy:', personCopy)
+// // // // // // const updatedPerson = { ...person, age: 26, ocupation: 'Разработчик' }
+// // // // // // console.log('Updated Person:', updatedPerson)
+
+// // // // // console.log('Rest оператор для массивов')
+// // // // // function sum(...numbers) {
+// // // // // 	return numbers.reduce((total, num) => total + num, 0)
 // // // // // }
+// // // // // console.log(`Sum 1,2,3,4: ${sum(1, 2, 3, 4)}`)
+// // // // // console.log(`Sum 5,10,15: ${sum(5, 10, 15)}`)
 
-// // // // // const { name, age, city } = user
-// // // // // console.log(name, age, city)
+// // // // // const numbers = [1, 2, 3, 4]
+// // // // // const [first, second, ...rest] = numbers
+// // // // // console.log(`First: ${first}, Second: ${second}, Rest: ${rest}`)
 
-// // // // // const { name: userName, age: userAge, country = 'Россия' } = user
-// // // // // console.log(userName, country)
+// // // // arr1 = [1, 2, 3]
+// // // // arr2 = [4, 5, 6]
+// // // // const combined = [...arr1, ...arr2]
+// // // // console.log(`Combined: ${combined}`)
 
-// // // // // console.log('\n==Деструктуризация в параметрах==')
-
-// // // // // function printUser({ name, age, city }) {
-// // // // // 	console.log(`Имя: ${name}, Возраст: ${age}, Город: ${city}`)
-// // // // // }
-
-// // // // // console.log()
-// // // // // printUser(user)
-
-// // // // // const product = {
-// // // // // 	name: 'Телефон',
-// // // // // 	price: 500,
-// // // // // 	category: 'Электроника',
-// // // // // 	inStock: true,
-// // // // // }
-// // // // // const { name: productName, price, category, inStock } = product
-// // // // // console.log(
-// // // // // 	`Название: ${productName}, Цена: ${price}, Категория: ${category}, В наличии: ${inStock}`,
-// // // // // )
-
-// // // // // function printProduct({ name, price, category, inStock }) {
-// // // // // 	console.log(
-// // // // // 		`Название: ${name}, Цена: ${price}, Категория: ${category}, В наличии: ${inStock}`,
-// // // // // 	)
-// // // // // }
-
-// // // // // printProduct(product)
-
-// // // // // console.log('\nSpread для массивов')
-// // // // // const arr1 = [1, 2, 3]
-// // // // // const arr2 = [4, 5, 6]
-// // // // // const combined = [...arr1, ...arr2]
-// // // // // console.log(`Combined: ${combined}`)
-// // // // // const copy = [...arr1]
-// // // // // console.log(`Copy: ${copy}`)
-// // // // // const extended = [0, ...arr1, 7, 8]
-// // // // // console.log(`Extended: ${extended}`)
-
-// // // // // console.log('\nSpread для объектов')
-
-// // // // // const person = {
-// // // // // 	name: 'Иван',
-// // // // // 	age: 25,
-// // // // // }
-// // // // // const adress = {
-// // // // // 	city: 'Санкт-Петербург',
-// // // // // 	street: 'Невский проспект',
-// // // // // }
-// // // // // const fullinfo = { ...person, ...adress }
-// // // // // console.log(`Full Info:`, fullinfo)
-// // // // // const personCopy = { ...person }
-// // // // // console.log('Person Copy:', personCopy)
-// // // // // const updatedPerson = { ...person, age: 26, ocupation: 'Разработчик' }
-// // // // // console.log('Updated Person:', updatedPerson)
-
-// // // // console.log('Rest оператор для массивов')
-// // // // function sum(...numbers) {
-// // // // 	return numbers.reduce((total, num) => total + num, 0)
+// // // // function findmax(...numbers) {
+// // // // 	return Math.max(...numbers)
 // // // // }
-// // // // console.log(`Sum 1,2,3,4: ${sum(1, 2, 3, 4)}`)
-// // // // console.log(`Sum 5,10,15: ${sum(5, 10, 15)}`)
+// // // // console.log(`Max of 1,2,3,4: ${findmax(1, 2, 3, 4)}`)
+// // // // console.log(`Max of 5,10,15: ${findmax(5, 20, 15)}`)
 
-// // // // const numbers = [1, 2, 3, 4]
-// // // // const [first, second, ...rest] = numbers
-// // // // console.log(`First: ${first}, Second: ${second}, Rest: ${rest}`)
+// // // // const person = {
+// // // // 	name: 'Иван',
+// // // // 	age: 25,
+// // // // }
+// // // // const adress = {
+// // // // 	city: 'Санкт-Петербург',
+// // // // 	street: 'Невский проспект',
+// // // // }
+// // // // const fullinfo = { ...person, ...adress }
+// // // // console.log(`Full Info:`, fullinfo)
+// // // import { greet, add, PI } from './utils.js'
 
-// // // arr1 = [1, 2, 3]
-// // // arr2 = [4, 5, 6]
-// // // const combined = [...arr1, ...arr2]
-// // // console.log(`Combined: ${combined}`)
+// // // console.log(greet('Мир'))
+// // // console.log(`Сумма 5 и 10: ${add(5, 10)}`)
+// // // console.log(`Значение PI: ${PI}`)
 
-// // // function findmax(...numbers) {
-// // // 	return Math.max(...numbers)
-// // // }
-// // // console.log(`Max of 1,2,3,4: ${findmax(1, 2, 3, 4)}`)
-// // // console.log(`Max of 5,10,15: ${findmax(5, 20, 15)}`)
+// // // import { multiply as умножить } from './utils.js'
+// // // console.log(`Произведение 5 и 10: ${умножить(5, 10)}`)
 
-// // // const person = {
-// // // 	name: 'Иван',
-// // // 	age: 25,
-// // // }
-// // // const adress = {
-// // // 	city: 'Санкт-Петербург',
-// // // 	street: 'Невский проспект',
-// // // }
-// // // const fullinfo = { ...person, ...adress }
-// // // console.log(`Full Info:`, fullinfo)
-// // import { greet, add, PI } from './utils.js'
+// // // import * as Utils from './utils.js'
+// // // console.log(Utils.greet('Мир'))
+// // // console.log('Умножение 5 и 10:', Utils.multiply(5, 10))
 
-// // console.log(greet('Мир'))
-// // console.log(`Сумма 5 и 10: ${add(5, 10)}`)
-// // console.log(`Значение PI: ${PI}`)
+// // // import * as math from './math.js'
+// // // console.log(`Квадрат 3: ${math.square(3)}`)
+// // // console.log(`Куб 2: ${math.cube(2)}`)
+// // // console.log(`Значение E: ${math.E}`)
+// // console.log('Промисы')
+// // const simplePromise = new Promise((resolve, reject) => {
+// // 	const success = true
+// // 	if (success) {
+// // 		resolve('Промис выполнен успешно!')
+// // 	} else {
+// // 		reject('Промис завершился с ошибкой.')
+// // 	}
+// // })
 
-// // import { multiply as умножить } from './utils.js'
-// // console.log(`Произведение 5 и 10: ${умножить(5, 10)}`)
+// // simplePromise
+// // 	.then(message => console.log('Успех:', message))
+// // 	.catch(error => console.error('Ошибка:', error))
 
-// // import * as Utils from './utils.js'
-// // console.log(Utils.greet('Мир'))
-// // console.log('Умножение 5 и 10:', Utils.multiply(5, 10))
+// // function delay(ms) {
+// // 	return new Promise(resolve => {
+// // 		setTimeout(() => {
+// // 			resolve(`Задержка в ${ms} миллисекунд завершена.`)
+// // 		}, ms)
+// // 	})
+// // }
 
-// // import * as math from './math.js'
-// // console.log(`Квадрат 3: ${math.square(3)}`)
-// // console.log(`Куб 2: ${math.cube(2)}`)
-// // console.log(`Значение E: ${math.E}`)
-// console.log('Промисы')
-// const simplePromise = new Promise((resolve, reject) => {
-// 	const success = true
-// 	if (success) {
-// 		resolve('Промис выполнен успешно!')
-// 	} else {
-// 		reject('Промис завершился с ошибкой.')
-// 	}
-// })
+// // delay(2000)
+// // 	.then(message => console.log(message))
+// // 	.catch(error => console.error('Ошибка:', error))
 
-// simplePromise
-// 	.then(message => console.log('Успех:', message))
-// 	.catch(error => console.error('Ошибка:', error))
+// // function fetchUserData(userId) {
+// // 	return new Promise((resolve, reject) => {
+// // 		setTimeout(() => {
+// // 			if (userId > 0) {
+// // 				resolve({ id: userId, name: 'Алиса', email: 'alice@example.com' })
+// // 			} else {
+// // 				reject('Неверный user ID.')
+// // 			}
+// // 		}, 1500)
+// // 	})
+// // }
 
-// function delay(ms) {
-// 	return new Promise(resolve => {
-// 		setTimeout(() => {
-// 			resolve(`Задержка в ${ms} миллисекунд завершена.`)
-// 		}, ms)
-// 	})
+// // fetchUserData(1)
+// // 	.then(user => console.log('Данные пользователя:', user))
+// // 	.catch(error => console.error('Ошибка:', error))
+
+// // function step1() {
+// // 	return new Promise(resolve => {
+// // 		setTimeout(() => resolve('Шаг 1 завершён'), 500)
+// // 	})
+// // }
+
+// // function step2(previousResult) {
+// // 	return new Promise(resolve => {
+// // 		setTimeout(() => resolve(`${previousResult}, Шаг 2 завершён`), 500)
+// // 	})
+// // }
+
+// // function step3(previousResult) {
+// // 	return new Promise(resolve => {
+// // 		setTimeout(() => resolve(`${previousResult}, Шаг 3 завершён`), 500)
+// // 	})
+// // }
+// // step1()
+// // 	.then(result => step2(result))
+// // 	.then(result => step3(result))
+// // 	.then(finalResult => console.log('Результат всех шагов:', finalResult))
+// // 	.catch(error => console.error('Ошибка в процессе выполнения:', error))
+
+// const product = {
+// 	name: 'Телефон',
+// 	price: 500,
+// 	category: 'Электроника',
+// 	inStock: true,
 // }
 
-// delay(2000)
-// 	.then(message => console.log(message))
-// 	.catch(error => console.error('Ошибка:', error))
-
-// function fetchUserData(userId) {
+// function checkInventory(inStock) {
 // 	return new Promise((resolve, reject) => {
 // 		setTimeout(() => {
-// 			if (userId > 0) {
-// 				resolve({ id: userId, name: 'Алиса', email: 'alice@example.com' })
+// 			if (inStock === true) {
+// 				resolve(`${product.name} - в наличии!`)
 // 			} else {
-// 				reject('Неверный user ID.')
+// 				reject('Товар закончился на складе.')
 // 			}
 // 		}, 1500)
 // 	})
 // }
 
-// fetchUserData(1)
-// 	.then(user => console.log('Данные пользователя:', user))
+// checkInventory(product.inStock)
+// 	.then(message => console.log('Успех:', message))
 // 	.catch(error => console.error('Ошибка:', error))
 
-// function step1() {
+// console.log('Асинхронные функции и await')
+// async function greet() {
+// 	return 'Привет, мир!'
+// }
+
+// greet().then(message => console.log(message))
+
+// function getWeather() {
 // 	return new Promise(resolve => {
-// 		setTimeout(() => resolve('Шаг 1 завершён'), 500)
+// 		setTimeout(() => {
+// 			resolve({ temp: 22, condition: 'Солнечно' })
+// 		}, 1000)
 // 	})
 // }
 
-// function step2(previousResult) {
-// 	return new Promise(resolve => {
-// 		setTimeout(() => resolve(`${previousResult}, Шаг 2 завершён`), 500)
+// async function showWeather() {
+// 	console.log('Получаем погоду...')
+// 	const weather = await getWeather()
+// 	console.log(`Погода: ${weather.temp}°C, ${weather.condition}`)
+// }
+// showWeather()
+
+// async function fetchData(shouleFail) {
+// 	return new Promise((reslove, reject) => {
+// 		setTimeout(() => {
+// 			if (shouleFail) {
+// 				reject('Ошибка при загрузке данных')
+// 			} else {
+// 				reslove({ data: 'Важные данные' })
+// 			}
+// 		}, 800)
 // 	})
 // }
 
-// function step3(previousResult) {
-// 	return new Promise(resolve => {
-// 		setTimeout(() => resolve(`${previousResult}, Шаг 3 завершён`), 500)
-// 	})
+// async function getData() {
+// 	try {
+// 		const resuit = await fetchData(false)
+// 		console.log('Успешно', resuit.data)
+
+// 		const failedResuit = await fetchData(true)
+// 		console.log('это не выполняетмя')
+// 	} catch (error) {
+// 		console.log('Поймана ошибка', error)
+// 	}
 // }
-// step1()
-// 	.then(result => step2(result))
-// 	.then(result => step3(result))
-// 	.then(finalResult => console.log('Результат всех шагов:', finalResult))
-// 	.catch(error => console.error('Ошибка в процессе выполнения:', error))
+// getData()
 
-const product = {
-	name: 'Телефон',
-	price: 500,
-	category: 'Электроника',
-	inStock: true,
-}
+// async function cookDinner() {
+// 	console.log('Начинаем готовить...')
 
-function checkInventory(inStock) {
-	return new Promise((resolve, reject) => {
+// 	const pasta = await delay(1000).then(() => 'Паста готова')
+// 	console.log(pasta)
+
+// 	const sauce = await delay(500).then(() => 'Соус готов')
+// 	console.log(sauce)
+
+// 	const salad = await delay(700).then(() => 'Салат готов')
+// 	console.log(salad)
+
+// 	return 'Ужин готов'
+// }
+
+function delay(ms) {
+	return new Promise(reslove => {
 		setTimeout(() => {
-			if (inStock === true) {
-				resolve(`${product.name} - в наличии!`)
-			} else {
-				reject('Товар закончился на складе.')
-			}
-		}, 1500)
+			reslove(`Прошло ${ms} миллисекунд`)
+		}, ms)
 	})
 }
 
-checkInventory(product.inStock)
-	.then(message => console.log('Успех:', message))
-	.catch(error => console.error('Ошибка:', error))
+// cookDinner().then(resuit => console.log(resuit))
+
+// async function cookDinnerFast() {
+// 	console.log('Готовим все одновременно...')
+
+// 	const [pasta, sauce, salad] = await Promise.all([
+// 		delay(1000).then(() => 'Паста готова'),
+// 		delay(500).then(() => 'Соус готов'),
+// 		delay(700).then(() => 'Салат готов'),
+// 	])
+
+// 	console.log(pasta, sauce, salad)
+// 	return 'Ужин готов быстрее'
+// }
+// cookDinnerFast().then(resuit => console.log(resuit))
+
+function checkInventory(product) {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			const i = {
+				ноутбук: true,
+				телефон: true,
+				планшет: false,
+			}
+			if (i[product] === true) {
+				resolve(`Товар "${product}" есть в наличии!`)
+			} else if (i[product] === false) {
+				reject(`Товара "${product}" нет в наличии!`)
+			} else {
+				reject(`Товар "${product}" не найден в системе!`)
+			}
+		}, 1000)
+	})
+}
+
+function calculateCost(product) {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			const prices = {
+				ноутбук: 50000,
+				телефон: 30000,
+				планшет: 20000,
+			}
+			if (prices[product]) {
+				resolve({
+					message: `Стоимость товара "${product}"`,
+					price: prices[product],
+				})
+			} else {
+				reject(`Товар "${product}" не найден в системе!`)
+			}
+		}, 200)
+	})
+}
+
+async function processOrder(product) {
+	try {
+		console.log(`\n=== Обработка заказа: ${product} ===`)
+
+		console.log('Подготовка к обработке заказа...')
+		const delayMess = await delay(500)
+		console.log(`${delayMess}`)
+
+		console.log('1. Проверяем наличие товара...')
+		const inventoryResult = await checkInventory(product)
+		console.log(` ${inventoryResult}`)
+
+		await delay(300)
+		console.log('   Продолжаем оформление...')
+
+		console.log('2. Рассчитываем стоимость...')
+		const costResult = await calculateCost(product)
+		console.log(`${costResult.message} (Всего: ${costResult.price} руб.)`)
+
+		await delay(900)
+		console.log('3. Подтверждаем заказ...')
+		await delay(400)
+		console.log('   Заказ подтверждён!')
+
+		console.log(`=== Заказ "${product}" успешно обработан! ===`)
+	} catch (error) {
+		console.error(`Ошибка: ${error}`)
+		throw error
+	}
+}
+
+processOrder('ноутбук')
