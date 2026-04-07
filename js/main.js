@@ -429,3 +429,141 @@
 // 	}
 // }
 // createPost()
+
+// console.log("Optional Chaning");
+
+// const user1 = {
+//     name: "Андрей",
+//     address : {
+//         city: "Волжский",
+//         street : "Пушкина",
+//     },
+// };
+
+// const user2 = {
+//     name: "Дмитрий",
+// };
+
+// const city1 = user2.address?.city;
+// console.log("Город ", city2);
+
+// const street = user1.address?.street;
+// console.log("Улица", street);
+
+// const admin = {
+//     name : "Администратор",
+//     permissions : {
+//         canDelete: () => true,
+//     },
+// };
+
+// const guest = {
+//     name : "Гость",
+// };
+
+// console.log("Админ может удалять?", admin.permissions?.canDelete?.());
+
+// const company = {
+//     name : "Tech corp",
+//     employees : [
+//         {name : "Надежда", role : "Developer"},
+//         {name : "Анна", role : "Designer"},
+//     ],
+// };
+
+// const startup = {
+//     name : "New Startup",
+// };
+
+// console.log("Первый сотрудников", company.employees?.[0]?.name);
+// console.log("Первый сотрудник стартапа", startup.employees?.[[0]?.name]);
+
+// console.log("Nullish Coalescing");
+// const value1 = 0;
+// const value2 = "";
+// const value3 = false;
+// const value4 = null;
+// const value5 = undefined;
+
+// console.log(`value1 || "defauit" `,value1 || "default" );
+
+// console.log(`value1 ?? "default"`,value1 ?? "default");
+// console.log(`value1 ?? "default"`,value2 ?? "default");
+
+// function displayUserSettings(settings){
+//     const theme = settings?.theme ?? "light";
+//     const fontSize = settings?.fontSize ?? 14;
+//     const notifications = settings?.notifications ?? true;
+
+//     console.log("настройки пользователя");
+//     console.log("Тема" , theme);
+//     console.log("Размер шрифта", fontSize);
+//     console.log("Уведомленияя" , notifications);
+// }
+
+// displayUserSettings({theme: "dark", fontSize: 16});
+// displayUserSettings({});
+
+// const apiResponse = {
+// 	data: {
+// 		user: {
+// 			profile: {
+// 				settings: {
+// 					language: 'ru',
+// 				},
+// 			},
+// 		},
+// 	},
+// }
+
+// const language = apiResponse.data.user.profile.settings.language ?? 'en'
+// console.log('Язык:', language)
+
+// const emptyResponse = {}
+// const defaultLanguage =
+// 	emptyResponse?.data?.user?.profile?.settings?.language ?? 'en'
+// console.log('Язык по умолчанию:', defaultLanguage)
+
+const order = {
+	id: 228,
+	customer: {
+		name: 'Daria Pikmi',
+	},
+	shipping: {
+		street: 'ул.Пушкина, д.10',
+		city: 'Ростов-на-Дону',
+		deliveryType: 'Самовывоз',
+	},
+	payment: {
+		paymentMethod: 'Наличными',
+		paymentStatus: 'Ожидает оплаты',
+		currency: 'RUB',
+	},
+}
+
+function displayOrder(order) {
+	const name = order.customer?.name ?? 'No Data'
+	const email = order.customer?.email ?? 'No Data'
+	const street = order.shipping?.street ?? 'No Data'
+	const city = order.shipping?.city ?? 'No Data'
+	const type = order.shipping?.deliveryType ?? 'No Data'
+	const index = order.shipping?.postalCode ?? 'No Data'
+	const payment = order.payment?.paymentMethod ?? 'No Data'
+	const status = order.payment?.paymentStatus ?? 'No Data'
+	const currency = order.payment?.currency ?? 'RUB'
+	console.log(
+		`-- Информация о заказе --
+    Клиент: ${name}
+    Контакт: ${email}
+    -- Доставка --
+    Адрес: ${street}
+    Город: ${city}
+    Тип: ${type}
+    Индекс: ${index}
+    -- Оплата --
+    Метод: ${payment}
+    Статус: ${status}
+    Валюта: ${currency}`,
+	)
+}
+displayOrder(order)
