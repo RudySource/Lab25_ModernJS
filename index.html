@@ -1,15 +1,42 @@
+<!-- 
+1. Initial project: currency converter structure
+2. Added CSS styling
+3. Implemented currency conversion logic
+4. Added input validation and result display
+Касательно коммитов, я не могу их использовать постепенно, ибо постоянно вношу правки во время работы, а туда суда комментить слишком дофига и бесполезно. Поэтому я просто сделал один коммит с итоговым результатом. Если нужно, могу сделать несколько коммитов с промежуточными результатами, но это будет не совсем точно отражать процесс разработки. -->
+
 <!doctype html>
 <html lang="ru-RU">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Лабораторная работа №24. Современный JavaScript</title>
+		<title>Лабораторная работа №25. Современный JavaScript</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<div class="container">
-			<h1>Лабораторная работа №24. Современный JavaScript</h1>
+			<h1>Лабораторная работа №25. Современный JavaScript</h1>
 			<h2>Современный JavaScript</h2>
+			<div class="converter">
+				<div class="shadow-dance-container">
+					<h1 class="shadow-dance-text">Конвертор из USD</h1>
+				</div>
+				<input
+					type="number"
+					id="amount"
+					placeholder="Введите сумму в USD..."
+					min="0"
+				/>
+				<div class="into">
+					<p>В</p>
+					<select id="currency">
+						<option value="eur">EUR</option>
+						<option value="rub">RUB</option>
+					</select>
+				</div>
+				<button id="convertBtn">Конвертировать</button>
+				<p id="result"></p>
+			</div>
 		</div>
 		<script type="module" src="js/api.js"></script>
 	</body>

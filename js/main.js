@@ -524,46 +524,46 @@
 // 	emptyResponse?.data?.user?.profile?.settings?.language ?? 'en'
 // console.log('Язык по умолчанию:', defaultLanguage)
 
-const order = {
-	id: 228,
-	customer: {
-		name: 'Daria Pikmi',
-	},
-	shipping: {
-		street: 'ул.Пушкина, д.10',
-		city: 'Ростов-на-Дону',
-		deliveryType: 'Самовывоз',
-	},
-	payment: {
-		paymentMethod: 'Наличными',
-		paymentStatus: 'Ожидает оплаты',
-		currency: 'RUB',
-	},
-}
+// const order = {
+// 	id: 228,
+// 	customer: {
+// 		name: 'Daria Pikmi',
+// 	},
+// 	shipping: {
+// 		street: 'ул.Пушкина, д.10',
+// 		city: 'Ростов-на-Дону',
+// 		deliveryType: 'Самовывоз',
+// 	},
+// 	payment: {
+// 		paymentMethod: 'Наличными',
+// 		paymentStatus: 'Ожидает оплаты',
+// 		currency: 'RUB',
+// 	},
+// }
 
-function displayOrder(order) {
-	const name = order.customer?.name ?? 'No Data'
-	const email = order.customer?.email ?? 'No Data'
-	const street = order.shipping?.street ?? 'No Data'
-	const city = order.shipping?.city ?? 'No Data'
-	const type = order.shipping?.deliveryType ?? 'No Data'
-	const index = order.shipping?.postalCode ?? 'No Data'
-	const payment = order.payment?.paymentMethod ?? 'No Data'
-	const status = order.payment?.paymentStatus ?? 'No Data'
-	const currency = order.payment?.currency ?? 'RUB'
-	console.log(
-		`-- Информация о заказе --
-    Клиент: ${name}
-    Контакт: ${email}
-    -- Доставка --
-    Адрес: ${street}
-    Город: ${city}
-    Тип: ${type}
-    Индекс: ${index}
-    -- Оплата --
-    Метод: ${payment}
-    Статус: ${status}
-    Валюта: ${currency}`,
-	)
-}
-displayOrder(order)
+// function displayOrder(order) {
+// 	const name = order.customer?.name ?? 'No Data'
+// 	const email = order.customer?.email ?? 'No Data'
+// 	const street = order.shipping?.street ?? 'No Data'
+// 	const city = order.shipping?.city ?? 'No Data'
+// 	const type = order.shipping?.deliveryType ?? 'No Data'
+// 	const index = order.shipping?.postalCode ?? 'No Data'
+// 	const payment = order.payment?.paymentMethod ?? 'No Data'
+// 	const status = order.payment?.paymentStatus ?? 'No Data'
+// 	const currency = order.payment?.currency ?? 'RUB'
+// 	console.log(
+// 		`-- Информация о заказе --
+//     Клиент: ${name}
+//     Контакт: ${email}
+//     -- Доставка --
+//     Адрес: ${street}
+//     Город: ${city}
+//     Тип: ${type}
+//     Индекс: ${index}
+//     -- Оплата --
+//     Метод: ${payment}
+//     Статус: ${status}
+//     Валюта: ${currency}`,
+// 	)
+// }
+// displayOrder(order)

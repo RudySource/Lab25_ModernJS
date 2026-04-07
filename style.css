@@ -30,3 +30,78 @@ h2{
   margin-bottom: 30px;
   font-weight: 400;
 }
+
+.into {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.into p {
+  margin: 0 10px 0 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.converter {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+button {
+  padding: 10px;
+  background: #0dbce3;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #099dbd;
+}
+
+#currency{
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-right: 2px solid black;
+  border-left: #000000 2px solid;
+}
+
+#currency:focus {
+  outline: none;
+}
+
+#result {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.shadow-dance-text {
+  font-size: 4rem;
+  color: #000000;
+  text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+  animation: shadow-dance 2s infinite;
+}
+
+@keyframes shadow-dance {
+
+  0%,
+  100% {
+    text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+  }
+
+  50% {
+    text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+  }
+}
