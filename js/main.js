@@ -271,13 +271,13 @@
 // 	return 'Ужин готов'
 // }
 
-function delay(ms) {
-	return new Promise(reslove => {
-		setTimeout(() => {
-			reslove(`Прошло ${ms} миллисекунд`)
-		}, ms)
-	})
-}
+// function delay(ms) {
+// 	return new Promise(reslove => {
+// 		setTimeout(() => {
+// 			reslove(`Прошло ${ms} миллисекунд`)
+// 		}, ms)
+// 	})
+// }
 
 // cookDinner().then(resuit => console.log(resuit))
 
@@ -295,74 +295,137 @@ function delay(ms) {
 // }
 // cookDinnerFast().then(resuit => console.log(resuit))
 
-function checkInventory(product) {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			const i = {
-				ноутбук: true,
-				телефон: true,
-				планшет: false,
-			}
-			if (i[product] === true) {
-				resolve(`Товар "${product}" есть в наличии!`)
-			} else if (i[product] === false) {
-				reject(`Товара "${product}" нет в наличии!`)
-			} else {
-				reject(`Товар "${product}" не найден в системе!`)
-			}
-		}, 1000)
-	})
-}
+// function checkInventory(product) {
+// 	return new Promise((resolve, reject) => {
+// 		setTimeout(() => {
+// 			const i = {
+// 				ноутбук: true,
+// 				телефон: true,
+// 				планшет: false,
+// 			}
+// 			if (i[product] === true) {
+// 				resolve(`Товар "${product}" есть в наличии!`)
+// 			} else if (i[product] === false) {
+// 				reject(`Товара "${product}" нет в наличии!`)
+// 			} else {
+// 				reject(`Товар "${product}" не найден в системе!`)
+// 			}
+// 		}, 1000)
+// 	})
+// }
 
-function calculateCost(product) {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			const prices = {
-				ноутбук: 50000,
-				телефон: 30000,
-				планшет: 20000,
-			}
-			if (prices[product]) {
-				resolve({
-					message: `Стоимость товара "${product}"`,
-					price: prices[product],
-				})
-			} else {
-				reject(`Товар "${product}" не найден в системе!`)
-			}
-		}, 200)
-	})
-}
+// function calculateCost(product) {
+// 	return new Promise((resolve, reject) => {
+// 		setTimeout(() => {
+// 			const prices = {
+// 				ноутбук: 50000,
+// 				телефон: 30000,
+// 				планшет: 20000,
+// 			}
+// 			if (prices[product]) {
+// 				resolve({
+// 					message: `Стоимость товара "${product}"`,
+// 					price: prices[product],
+// 				})
+// 			} else {
+// 				reject(`Товар "${product}" не найден в системе!`)
+// 			}
+// 		}, 200)
+// 	})
+// }
 
-async function processOrder(product) {
-	try {
-		console.log(`\n=== Обработка заказа: ${product} ===`)
+// async function processOrder(product) {
+// 	try {
+// 		console.log(`\n=== Обработка заказа: ${product} ===`)
 
-		console.log('Подготовка к обработке заказа...')
-		const delayMess = await delay(500)
-		console.log(`${delayMess}`)
+// 		console.log('Подготовка к обработке заказа...')
+// 		const delayMess = await delay(500)
+// 		console.log(`${delayMess}`)
 
-		console.log('1. Проверяем наличие товара...')
-		const inventoryResult = await checkInventory(product)
-		console.log(` ${inventoryResult}`)
+// 		console.log('1. Проверяем наличие товара...')
+// 		const inventoryResult = await checkInventory(product)
+// 		console.log(` ${inventoryResult}`)
 
-		await delay(300)
-		console.log('   Продолжаем оформление...')
+// 		await delay(300)
+// 		console.log('   Продолжаем оформление...')
 
-		console.log('2. Рассчитываем стоимость...')
-		const costResult = await calculateCost(product)
-		console.log(`${costResult.message} (Всего: ${costResult.price} руб.)`)
+// 		console.log('2. Рассчитываем стоимость...')
+// 		const costResult = await calculateCost(product)
+// 		console.log(`${costResult.message} (Всего: ${costResult.price} руб.)`)
 
-		await delay(900)
-		console.log('3. Подтверждаем заказ...')
-		await delay(400)
-		console.log('   Заказ подтверждён!')
+// 		await delay(900)
+// 		console.log('3. Подтверждаем заказ...')
+// 		await delay(400)
+// 		console.log('   Заказ подтверждён!')
 
-		console.log(`=== Заказ "${product}" успешно обработан! ===`)
-	} catch (error) {
-		console.error(`Ошибка: ${error}`)
-		throw error
-	}
-}
+// 		console.log(`=== Заказ "${product}" успешно обработан! ===`)
+// 	} catch (error) {
+// 		console.error(`Ошибка: ${error}`)
+// 		throw error
+// 	}
+// }
 
-processOrder('ноутбук')
+// processOrder('ноутбук')
+
+// console.log("Fetch Api");
+// async function getUsers() {
+//     try{
+//         const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//         if (!response.ok){
+//             throw new Error(`HTTP ошибка статус${response.status}` );
+//         }
+//         const users = await response.json();
+
+//         console.log("первые три пользователя");
+//         users.slice(0, 3).forEach((user) => {
+//             console.log(`- ${user.name} (${user.email})`);
+//         });
+//     }catch(error){
+//         console.log("Ошибка при загрузке ", error.message);
+//     }
+// }
+
+// getUsers();
+
+// async function getUserById(id) {
+//     try{
+//         const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+//         const user = await response.json();
+
+//         console.log(`Пользователь #${id}`);
+//         console.log(`Имя ${user.name}`);
+//         console.log(`Город ${user.address.city}`);
+//         console.log(`Компании ${user.company.name}`);
+
+//     }catch(error){
+//         console.log("Ошибка", error.message);
+//     }
+
+// }
+
+// getUserById(1);
+
+// async function createPost() {
+// 	try {
+// 		const newPost = {
+// 			title: 'Моя первая запись',
+// 			body: 'Это содержание моей первой записи в блоге',
+// 			userId: 1,
+// 		}
+// 		const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+// 			method: 'POST',
+// 			headers: {
+// 				'Content-Type': 'application/json',
+// 			},
+// 			body: JSON.stringify(newPost),
+// 		})
+
+// 		const createdPost = await response.json()
+// 		console.log('Создана новая запись:')
+// 		console.log(`ID: ${createdPost.id}`)
+// 		console.log(createdPost.title)
+// 	} catch (error) {
+// 		console.log('Ошибка при создании записи:', error.message)
+// 	}
+// }
+// createPost()
